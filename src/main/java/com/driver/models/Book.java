@@ -43,7 +43,7 @@ public class Book {
         this.name = name;
         this.genre = genre;
         this.author = author;
-        this.available = available;
+        this.available = true;
     }
 
     public int getId() {
@@ -102,4 +102,3 @@ public class Book {
         this.transactions = transactions;
     }
 }
-

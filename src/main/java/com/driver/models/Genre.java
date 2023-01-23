@@ -1,8 +1,9 @@
 package com.driver.models;
 
+
 import javax.persistence.Table;
 
-@Table(name = "Genre")
+@Table(name="Genre")
 public enum Genre {
     FICTIONAL,
     NON_FICTIONAL,

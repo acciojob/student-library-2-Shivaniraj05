@@ -3,6 +3,8 @@ package com.driver.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.boot.test.autoconfigure.data.cassandra.DataCassandraTest;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -10,10 +12,10 @@ import java.util.UUID;
 
 @Entity
 @Builder
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class Transaction {
 
     @Id
@@ -43,6 +45,8 @@ public class Transaction {
     @CreationTimestamp
     private Date transactionDate;
 
+
+
     public int getId() {
         return id;
     }
@@ -57,6 +61,22 @@ public class Transaction {
 
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
+    }
+
+    public boolean isIssueOperation() {
+        return isIssueOperation;
+    }
+
+    public void setIssueOperation(boolean issueOperation) {
+        isIssueOperation = issueOperation;
+    }
+
+    public TransactionStatus getTransactionStatus() {
+        return transactionStatus;
+    }
+
+    public void setTransactionStatus(TransactionStatus transactionStatus) {
+        this.transactionStatus = transactionStatus;
     }
 
     public Card getCard() {
@@ -83,22 +103,6 @@ public class Transaction {
         this.fineAmount = fineAmount;
     }
 
-    public boolean isIssueOperation() {
-        return isIssueOperation;
-    }
-
-    public void setIssueOperation(boolean issueOperation) {
-        isIssueOperation = issueOperation;
-    }
-
-    public TransactionStatus getTransactionStatus() {
-        return transactionStatus;
-    }
-
-    public void setTransactionStatus(TransactionStatus transactionStatus) {
-        this.transactionStatus = transactionStatus;
-    }
-
     public Date getTransactionDate() {
         return transactionDate;
     }
@@ -107,4 +111,3 @@ public class Transaction {
         this.transactionDate = transactionDate;
     }
 }
-

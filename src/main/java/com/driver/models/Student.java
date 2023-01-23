@@ -24,8 +24,9 @@ public class Student {
     public Student() {
     }
 
-    public Student(String emailId, String name, int age, String country) {
-        this.emailId = emailId;
+
+    public Student(String email, String name, int age, String country) {
+        this.emailId = email;
         this.name = name;
         this.age = age;
         this.country = country;
@@ -43,6 +44,7 @@ public class Student {
 
     @UpdateTimestamp
     private Date updatedOn;
+
 
     public int getId() {
         return id;

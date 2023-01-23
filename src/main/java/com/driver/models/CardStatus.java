@@ -1,8 +1,9 @@
 package com.driver.models;
 
+
 import javax.persistence.Table;
 
-@Table(name = "CardStatus")
+@Table(name="CradStatus")
 public enum CardStatus {
     ACTIVATED,
     DEACTIVATED
